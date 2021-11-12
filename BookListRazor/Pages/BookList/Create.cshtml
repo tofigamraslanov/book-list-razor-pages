@@ -1,0 +1,52 @@
+﻿@page
+@model BookListRazor.Pages.BookList.CreateModel
+
+<br/>
+<h2 class="text-info">Create New Book</h2>
+<br/>
+
+<div class="container border" style="padding: 30px">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Book.Name"></label>
+            </div>
+            <div class="col-6">
+                <input class="form-control" asp-for="Book.Name"></input>
+            </div>
+            <span class="text-danger" asp-validation-for="Book.Name"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Book.Author"></label>
+            </div>
+            <div class="col-6">
+                <input class="form-control" asp-for="Book.Author"></input>
+            </div>
+            <span class="text-danger" asp-validation-for="Book.Author"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Book.Isbn"></label>
+            </div>
+            <div class="col-6">
+                <input class="form-control" asp-for="Book.Isbn"></input>
+            </div>
+            <span class="text-danger" asp-validation-for="Book.Isbn"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Create" class="btn btn-primary form-control"/>
+            </div>
+            <div class="col-3">
+                <a class="btn btn-success form-control" asp-page="Index">Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts
+{
+    <partial name="Shared/_ValidationScriptsPartial"/>
+}
