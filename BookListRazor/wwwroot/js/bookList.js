@@ -19,8 +19,8 @@ function loadDataTable() {
                 "data": "id",
                 "render": function(data) {
                     return `<div class="text-center">
-                                <a href="/BookList/Edit?id=${data
-                        }" class='btn btn-success text-white' style='cursor:pointer; width:70px;'>
+                                <a href="/BookList/Upsert?id=${data
+                                    }" class='btn btn-success text-white' style='cursor:pointer; width:70px;'>
                                     Edit
                                 </a>
                                 &nbsp;
@@ -41,7 +41,7 @@ function loadDataTable() {
 }
 
 function Delete(url) {
-    swal({
+    window.swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be to recover",
         icon: "warning",
@@ -54,10 +54,10 @@ function Delete(url) {
                 url: url,
                 success: function(data) {
                     if (data.success) {
-                        toastr.success(data.message);
+                        window.toastr.success(data.message);
                         dataTable.ajax.reload();
                     } else {
-                        toastr.error(data.message);
+                        window.toastr.error(data.message);
                     }
                 }
             });
